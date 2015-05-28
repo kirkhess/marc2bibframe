@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:bf="http://bibframe.org/vocab/" xmlns:bf2="http://bibframe.org/vocab2/" xmlns:madsrdf="http://www.loc.gov/mads/rdf/v1#" xmlns:relators="http://id.loc.gov/vocabulary/relators/">
+  <bf:Work rdf:about="http://bibframe.org/1222386">
+    <rdf:type rdf:resource="http://bibframe.org/vocab/Text"/>
+    <bf:authorizedAccessPoint>Mitchell, Margaret, 1900-1949. Gone with the wind</bf:authorizedAccessPoint>
+    <bf:workTitle rdf:resource="http://bibframe.org/1222386title5"/>
+    <bf:creator rdf:resource="http://bibframe.org/1222386person6"/>
+    <bf:language rdf:resource="http://id.loc.gov/vocabulary/languages/eng"/>
+    <bf:subject rdf:resource="http://bibframe.org/1222386person8"/>
+    <bf:subject rdf:resource="http://bibframe.org/1222386topic9"/>
+    <bf:subject rdf:resource="http://bibframe.org/1222386topic10"/>
+    <bf:subject rdf:resource="http://bibframe.org/1222386topic11"/>
+    <bf:classification rdf:resource="http://bibframe.org/1222386classification12"/>
+    <bf:classification rdf:resource="http://bibframe.org/1222386classification13"/>
+    <bf:derivedFrom rdf:resource="http://bibframe.org/1222386.marcxml.xml"/>
+    <bf:authorizedAccessPoint xml:lang="x-bf-hash">mitchellmargaret19001949gonewiththewindengworktext</bf:authorizedAccessPoint>
+  </bf:Work>
+  <bf:Instance rdf:about="http://bibframe.org/1222386instance17">
+    <rdf:type rdf:resource="http://bibframe.org/vocab/Monograph"/>
+    <bf:instanceTitle rdf:resource="http://bibframe.org/1222386title20"/>
+    <bf:publication>
+      <bf:Provider>
+        <bf:providerName>
+          <bf:Organization>
+            <bf:label>Macmillan</bf:label>
+          </bf:Organization>
+        </bf:providerName>
+        <bf:providerPlace>
+          <bf:Place>
+            <bf:label>New York</bf:label>
+          </bf:Place>
+        </bf:providerPlace>
+        <bf:providerDate>1961</bf:providerDate>
+      </bf:Provider>
+    </bf:publication>
+    <bf:modeOfIssuance>single unit</bf:modeOfIssuance>
+    <bf:extent>954 p.</bf:extent>
+    <bf:dimensions>25 cm.</bf:dimensions>
+    <bf:illustrationNote>illus.</bf:illustrationNote>
+    <bf:titleStatement>Gone with the wind.</bf:titleStatement>
+    <bf:edition>Anniversary ed.</bf:edition>
+    <bf:providerStatement>New York, Macmillan, 1961.</bf:providerStatement>
+    <bf:lccn>
+      <bf:Identifier>
+        <bf:identifierValue>61008194</bf:identifierValue>
+        <bf:identifierScheme rdf:resource="http://id.loc.gov/vocabulary/identifiers/lccn"/>
+      </bf:Identifier>
+    </bf:lccn>
+    <bf:derivedFrom rdf:resource="http://bibframe.org/1222386.marcxml.xml"/>
+    <bf:instanceOf rdf:resource="http://bibframe.org/1222386"/>
+  </bf:Instance>
+  <bf:Annotation rdf:about="http://bibframe.org/1222386annotation16">
+    <bf:derivedFrom rdf:resource="http://bibframe.org/1222386.marcxml.xml"/>
+    <bf:descriptionSource rdf:resource="http://id.loc.gov/vocabulary/organizations/dlc"/>
+    <bf:descriptionModifier rdf:resource="http://id.loc.gov/vocabulary/organizations/dlc"/>
+    <bf:descriptionConventions rdf:resource="http://id.loc.gov/vocabulary/descriptionConventions/nonisbd"/>
+    <bf:generationProcess>DLC transform-tool:2015-04-27-T11:00:00</bf:generationProcess>
+    <bf:changeDate>2014-08-12T15:24</bf:changeDate>
+    <bf:annotates rdf:resource="http://bibframe.org/1222386"/>
+  </bf:Annotation>
+  <bf:HeldItem rdf:about="http://bibframe.org/1222386helditem32">
+    <bf:label>PZ3.M69484 Go 32</bf:label>
+    <bf:shelfMarkLcc>PZ3.M69484 Go 32</bf:shelfMarkLcc>
+    <bf:shelfMarkLcc>PS3525.I972</bf:shelfMarkLcc>
+    <bf:holdingFor rdf:resource="http://bibframe.org/1222386instance17"/>
+  </bf:HeldItem>
+  <bf:Title rdf:about="http://bibframe.org/1222386title5">
+    <bf:titleValue>Gone with the wind</bf:titleValue>
+  </bf:Title>
+  <bf:Person rdf:about="http://bibframe.org/1222386person6">
+    <bf:label>Mitchell, Margaret, 1900-1949.</bf:label>
+    <bf:authorizedAccessPoint>Mitchell, Margaret, 1900-1949.</bf:authorizedAccessPoint>
+    <bf:hasAuthority>
+      <madsrdf:Authority>
+        <madsrdf:authoritativeLabel>Mitchell, Margaret, 1900-1949.</madsrdf:authoritativeLabel>
+      </madsrdf:Authority>
+    </bf:hasAuthority>
+  </bf:Person>
+  <bf:Person rdf:about="http://bibframe.org/1222386person8">
+    <bf:authorizedAccessPoint>O'Hara, Scarlett (Fictitious character)--Fiction.</bf:authorizedAccessPoint>
+    <bf:label>O'Hara, Scarlett (Fictitious character)--Fiction.</bf:label>
+    <bf:hasAuthority>
+      <madsrdf:Authority>
+        <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
+        <madsrdf:authoritativeLabel>O'Hara, Scarlett (Fictitious character)--Fiction.</madsrdf:authoritativeLabel>
+        <madsrdf:isMemberOfMADSScheme rdf:resource="http://id.loc.gov/authorities/subjects"/>
+      </madsrdf:Authority>
+    </bf:hasAuthority>
+  </bf:Person>
+  <bf:Topic rdf:about="http://bibframe.org/1222386topic9">
+    <bf:authorizedAccessPoint>Women--Georgia--Fiction</bf:authorizedAccessPoint>
+    <bf:label>Women--Georgia--Fiction</bf:label>
+    <bf:hasAuthority>
+      <madsrdf:Authority>
+        <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
+        <madsrdf:authoritativeLabel>Women--Georgia--Fiction</madsrdf:authoritativeLabel>
+        <madsrdf:isMemberOfMADSScheme rdf:resource="http://id.loc.gov/authorities/subjects"/>
+      </madsrdf:Authority>
+    </bf:hasAuthority>
+  </bf:Topic>
+  <bf:Topic rdf:about="http://bibframe.org/1222386topic10">
+    <bf:authorizedAccessPoint>Historical fiction</bf:authorizedAccessPoint>
+    <bf:label>Historical fiction</bf:label>
+    <bf:hasAuthority>
+      <madsrdf:Authority>
+        <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#GenreForm"/>
+        <madsrdf:authoritativeLabel>Historical fiction</madsrdf:authoritativeLabel>
+        <madsrdf:isMemberOfMADSScheme rdf:resource="http://id.loc.gov/vocabulary/subjectSchemes/gsafd"/>
+      </madsrdf:Authority>
+    </bf:hasAuthority>
+    <bf:authoritySource>http://id.loc.gov/vocabulary/subjectSchemes/gsafd</bf:authoritySource>
+  </bf:Topic>
+  <bf:Topic rdf:about="http://bibframe.org/1222386topic11">
+    <bf:authorizedAccessPoint>War stories</bf:authorizedAccessPoint>
+    <bf:label>War stories</bf:label>
+    <bf:hasAuthority>
+      <madsrdf:Authority>
+        <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#GenreForm"/>
+        <madsrdf:authoritativeLabel>War stories</madsrdf:authoritativeLabel>
+        <madsrdf:isMemberOfMADSScheme rdf:resource="http://id.loc.gov/vocabulary/subjectSchemes/gsafd"/>
+      </madsrdf:Authority>
+    </bf:hasAuthority>
+    <bf:authoritySource>http://id.loc.gov/vocabulary/subjectSchemes/gsafd</bf:authoritySource>
+  </bf:Topic>
+  <bf:Classification rdf:about="http://bibframe.org/1222386classification12">
+    <bf:classificationScheme rdf:resource="http://id.loc.gov/authorities/classSchemes/lcc"/>
+    <bf:classificationNumber>PZ3.M69484</bf:classificationNumber>
+    <bf:label>PZ3.M69484</bf:label>
+    <bf:classificationAssigner>dlc</bf:classificationAssigner>
+  </bf:Classification>
+  <bf:Classification rdf:about="http://bibframe.org/1222386classification13">
+    <bf:classificationScheme rdf:resource="http://id.loc.gov/authorities/classSchemes/lcc"/>
+    <bf:classificationNumber>PS3525.I972</bf:classificationNumber>
+    <bf:label>PS3525.I972</bf:label>
+    <bf:classificationAssigner>dlc</bf:classificationAssigner>
+  </bf:Classification>
+  <bf:Title rdf:about="http://bibframe.org/1222386title20">
+    <bf:titleValue>Gone with the wind</bf:titleValue>
+  </bf:Title>
+</rdf:RDF>

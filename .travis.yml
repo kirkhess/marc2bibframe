@@ -1,0 +1,14 @@
+language: java
+
+jdk:
+  - openjdk7
+  - oraclejdk7
+  - openjdk6
+
+before_script:
+  - sudo apt-get update -qq
+  - sudo add-apt-repository ppa:juan457/zorba
+  - sudo apt-get update
+  - sudo apt-get install zorba
+
+script: zorba -i -f -q xbin/zorba.xqy -e marcxmluri:="http://lccn.loc.gov/61008194/marcxml" -e serialization:="rdfxml" -e baseuri:="http://bibframe.org/"
