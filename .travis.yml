@@ -5,7 +5,7 @@ jdk:
 
 before_script:
   - sudo apt-get update -qq
-  - sudo add-apt-repository ppa:juan457/zorba
+  - sudo add-apt-repository -y ppa:juan457/zorba
   - sudo apt-get update
   - sudo apt-get install zorba
 
