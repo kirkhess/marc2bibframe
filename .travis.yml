@@ -3,9 +3,9 @@ language: java
 jdk:
   - openjdk7
   - oraclejdk7
-  - openjdk6
 
 before_script:
+  - jdk_switcher use oraclejdk7
   - sudo apt-get update -qq
   - sudo add-apt-repository ppa:juan457/zorba
   - sudo apt-get update
