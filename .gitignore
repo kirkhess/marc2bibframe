@@ -18,5 +18,7 @@ logs/
 *.instance.json
 *.work.json
 
+#java
+target/
 
 

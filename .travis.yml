@@ -12,3 +12,6 @@ before_script:
 script: 
   - jdk_switcher use oraclejdk7
   - zorba -i -f -q xbin/zorba.xqy -e marcxmluri:="http://lccn.loc.gov/61008194/marcxml" -e serialization:="rdfxml" -e baseuri:="http://bibframe.org/"
+  - zorba -i -f -q xbin/zorba3-0.xqy -e marcxmluri:="http://lccn.loc.gov/61008194/marcxml" -e serialization:="rdfxml" -e baseuri:="http://bibframe.org/"
+  - java -cp ~/.m2/repository/net/sf/saxon/Saxon-HE/9.5.1-8/Saxon-HE-9.5.1-8.jar net.sf.saxon.Query xbin/saxon3.xqy marcxmluri="http://lccn.loc.gov/61008194/marcxml"
+  - java -cp ~/.m2/repository/net/sf/saxon/Saxon-HE/9.5.1-8/Saxon-HE-9.5.1-8.jar net.sf.saxon.Query xbin/saxon.xqy marcxmluri="http://lccn.loc.gov/61008194/marcxml"
