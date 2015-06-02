@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/kirkhess/marc2bibframe.svg?branch=master)](https://travis-ci.org/kirkhess/marc2bibframe)
+
 XQuery utility to convert MARC/XML Bibliographic records to BIBFRAME resources.
 
 This XQuery version was developed by the Library of Congress Network 
