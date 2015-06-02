@@ -1,6 +1,5 @@
-Inline-style: 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
-![travis-ci status](https://travis-ci.org/kirkhess/marc2bibframe.svg?branch=master "Travis-CI status")
+[![Build status](https://travis-ci.org/kirkhess/marc2bibframe.svg?branch=master)](https://travis-ci.org/kirkhess/marc2bibframe)
+[![Build Status](https://travis-ci.org/jiaola/marc4js.svg?branch=master)](https://travis-ci.org/jiaola/marc4js)
 
 XQuery utility to convert MARC/XML Bibliographic records to BIBFRAME resources.
 
