@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/kirkhess/marc2bibframe.svg?branch=master)](https://travis-ci.org/kirkhess/marc2bibframe)
+<img src="https://travis-ci.org/kirkhess/marc2bibframe.svg?branch=master"/>
 
 XQuery utility to convert MARC/XML Bibliographic records to BIBFRAME resources.
 
