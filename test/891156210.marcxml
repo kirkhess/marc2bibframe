@@ -1,0 +1,265 @@
+      <record xmlns="http://www.loc.gov/MARC21/slim">
+        <leader>00000cam a2200000 i 4500</leader>
+        <controlfield tag="001">ocn891156210</controlfield>
+        <controlfield tag="003">OCoLC</controlfield>
+        <controlfield tag="005">20150228120332.2</controlfield>
+        <controlfield tag="008">140923m20149999cc       b    000 0 chi c</controlfield>
+        <datafield tag="040" ind1=" " ind2=" ">
+          <subfield code="a">WAU</subfield>
+          <subfield code="b">eng</subfield>
+          <subfield code="e">rda</subfield>
+          <subfield code="c">WAU</subfield>
+          <subfield code="d">WAU</subfield>
+          <subfield code="d">OCLCF</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+          <subfield code="c">$1</subfield>
+        </datafield>
+        <datafield tag="020" ind1=" " ind2=" ">
+          <subfield code="a">9787549554188 (v. 1)</subfield>
+        </datafield>
+        <datafield tag="020" ind1=" " ind2=" ">
+          <subfield code="a">7549554188 (v. 1)</subfield>
+        </datafield>
+        <datafield tag="020" ind1=" " ind2=" ">
+          <subfield code="a">9787563387120 (v. 2)</subfield>
+        </datafield>
+        <datafield tag="020" ind1=" " ind2=" ">
+          <subfield code="a">7563387129 (v. 2)</subfield>
+        </datafield>
+        <datafield tag="020" ind1=" " ind2=" ">
+          <subfield code="a">9787563387175 (v. 3)</subfield>
+        </datafield>
+        <datafield tag="020" ind1=" " ind2=" ">
+          <subfield code="a">756338717X (v. 3)</subfield>
+        </datafield>
+        <datafield tag="020" ind1=" " ind2=" ">
+          <subfield code="a">9787549554034 (v. 4)</subfield>
+        </datafield>
+        <datafield tag="020" ind1=" " ind2=" ">
+          <subfield code="a">754955403X (v. 4)</subfield>
+        </datafield>
+        <datafield tag="020" ind1=" " ind2=" ">
+          <subfield code="a">9787549554195 (v. 5)</subfield>
+        </datafield>
+        <datafield tag="020" ind1=" " ind2=" ">
+          <subfield code="a">7549554196 (v. 5)</subfield>
+        </datafield>
+        <datafield tag="020" ind1=" " ind2=" ">
+          <subfield code="a">9787549552955 (v. 6)</subfield>
+        </datafield>
+        <datafield tag="020" ind1=" " ind2=" ">
+          <subfield code="a">7549552959 (v. 6)</subfield>
+        </datafield>
+        <datafield tag="020" ind1=" " ind2=" ">
+          <subfield code="a">9787549553945 (v. 7)</subfield>
+        </datafield>
+        <datafield tag="020" ind1=" " ind2=" ">
+          <subfield code="a">7549553947 (v. 7)</subfield>
+        </datafield>
+        <datafield tag="020" ind1=" " ind2=" ">
+          <subfield code="a">9787549553952 (v. 8)</subfield>
+        </datafield>
+        <datafield tag="020" ind1=" " ind2=" ">
+          <subfield code="a">7549553955 (v. 8)</subfield>
+        </datafield>
+        <datafield tag="020" ind1=" " ind2=" ">
+          <subfield code="a">9787549554782 (v. 9)</subfield>
+        </datafield>
+        <datafield tag="020" ind1=" " ind2=" ">
+          <subfield code="a">7549554781 (v. 9)</subfield>
+        </datafield>
+        <datafield tag="020" ind1=" " ind2=" ">
+          <subfield code="a">9787563387014 (v. 10)</subfield>
+        </datafield>
+        <datafield tag="020" ind1=" " ind2=" ">
+          <subfield code="a">7563387013 (v. 10)</subfield>
+        </datafield>
+        <datafield tag="020" ind1=" " ind2=" ">
+          <subfield code="a">9787549551446 (v. 11)</subfield>
+        </datafield>
+        <datafield tag="020" ind1=" " ind2=" ">
+          <subfield code="a">7549551448 (v. 11)</subfield>
+        </datafield>
+        <datafield tag="020" ind1=" " ind2=" ">
+          <subfield code="a">9787549518395 (v. 12)</subfield>
+        </datafield>
+        <datafield tag="020" ind1=" " ind2=" ">
+          <subfield code="a">7549518394 (v. 12)</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+          <subfield code="a">(OCoLC)891156210</subfield>
+        </datafield>
+        <datafield tag="042" ind1=" " ind2=" ">
+          <subfield code="a">pcc</subfield>
+        </datafield>
+        <datafield tag="043" ind1=" " ind2=" ">
+          <subfield code="a">a-cc---</subfield>
+        </datafield>
+        <datafield tag="050" ind1=" " ind2="4">
+          <subfield code="a">AC150</subfield>
+          <subfield code="b">.Y817 2014</subfield>
+        </datafield>
+        <datafield tag="049" ind1=" " ind2=" ">
+          <subfield code="a">MAIN</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+          <subfield code="6">880-01</subfield>
+          <subfield code="a">Yu, Yingshi,</subfield>
+          <subfield code="e">author.</subfield>
+        </datafield>
+        <datafield tag="240" ind1="1" ind2="0">
+          <subfield code="a">Works.</subfield>
+          <subfield code="k">Selections.</subfield>
+          <subfield code="f">2014</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+          <subfield code="6">880-02</subfield>
+          <subfield code="a">Yu Yingshi wen ji /</subfield>
+          <subfield code="c">Yu Yingshi zhu ; Shen Zhijia bian.</subfield>
+        </datafield>
+        <datafield tag="250" ind1=" " ind2=" ">
+          <subfield code="6">880-03</subfield>
+          <subfield code="3">Volume 1-10:</subfield>
+          <subfield code="a">Di 2 ban.</subfield>
+        </datafield>
+        <datafield tag="250" ind1=" " ind2=" ">
+          <subfield code="6">880-04</subfield>
+          <subfield code="3">Volume 11-12:</subfield>
+          <subfield code="a">Di 1 ban.</subfield>
+        </datafield>
+        <datafield tag="264" ind1=" " ind2="1">
+          <subfield code="6">880-05</subfield>
+          <subfield code="a">Guilin Shi :</subfield>
+          <subfield code="b">Guangxi shi fan da xue chu ban she,</subfield>
+          <subfield code="c">2014-</subfield>
+        </datafield>
+        <datafield tag="300" ind1=" " ind2=" ">
+          <subfield code="a">volumes ;</subfield>
+          <subfield code="c">22 cm</subfield>
+        </datafield>
+        <datafield tag="336" ind1=" " ind2=" ">
+          <subfield code="a">text</subfield>
+          <subfield code="b">txt</subfield>
+          <subfield code="2">rdacontent</subfield>
+        </datafield>
+        <datafield tag="337" ind1=" " ind2=" ">
+          <subfield code="a">unmediated</subfield>
+          <subfield code="b">n</subfield>
+          <subfield code="2">rdamedia</subfield>
+        </datafield>
+        <datafield tag="338" ind1=" " ind2=" ">
+          <subfield code="a">volume</subfield>
+          <subfield code="b">nc</subfield>
+          <subfield code="2">rdacarrier</subfield>
+        </datafield>
+        <datafield tag="504" ind1=" " ind2=" ">
+          <subfield code="a">Includes bibliographical references.</subfield>
+        </datafield>
+        <datafield tag="505" ind1="1" ind2=" ">
+          <subfield code="6">880-06</subfield>
+          <subfield code="a">Di 1 juan. Shi xue, shi jia yu shi dai -- Di 2 juan. Zhongguo si xiang chuan tong ji qi xian dai bian qian -- Di 3 juan. Ru jia lun li yu shang ren jing shen -- Di 4 juan. Zhongguo zhi shi ren zhi shi de kao cha -- Di 5 juan. Xian dai xue ren yu xue shu -- Di 6 juan. Min zhu zhi du yu xian dai wen ming -- Di 7-8 juan. Wen hua ping lun yu Zhongguo qing huai (shang, xia). -- Di 9 juan. Li shi ren wu kao bian -- Di 10 juan. Song Ming li xue yu zheng zhi wen hua -- Di 11 juan. Lun xue hui you -- Di 12 juan. Guo xue yu Zhongguo ren wen</subfield>
+        </datafield>
+        <datafield tag="651" ind1=" " ind2="0">
+          <subfield code="a">China</subfield>
+          <subfield code="x">Historiography.</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+          <subfield code="a">Philosophy, Chinese.</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+          <subfield code="a">Confucian ethics</subfield>
+          <subfield code="z">China.</subfield>
+        </datafield>
+        <datafield tag="651" ind1=" " ind2="0">
+          <subfield code="a">China</subfield>
+          <subfield code="x">Intellectual life.</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="7">
+          <subfield code="a">Confucian ethics.</subfield>
+          <subfield code="2">fast</subfield>
+          <subfield code="0">(OCoLC)fst00875050</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="7">
+          <subfield code="a">Historiography.</subfield>
+          <subfield code="2">fast</subfield>
+          <subfield code="0">(OCoLC)fst00958221</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="7">
+          <subfield code="a">Intellectual life.</subfield>
+          <subfield code="2">fast</subfield>
+          <subfield code="0">(OCoLC)fst00975769</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="7">
+          <subfield code="a">Philosophy, Chinese.</subfield>
+          <subfield code="2">fast</subfield>
+          <subfield code="0">(OCoLC)fst01060917</subfield>
+        </datafield>
+        <datafield tag="651" ind1=" " ind2="7">
+          <subfield code="a">China.</subfield>
+          <subfield code="2">fast</subfield>
+          <subfield code="0">(OCoLC)fst01206073</subfield>
+        </datafield>
+        <datafield tag="700" ind1="1" ind2=" ">
+          <subfield code="6">880-07</subfield>
+          <subfield code="a">Shen, Zhijia,</subfield>
+          <subfield code="e">editor.</subfield>
+        </datafield>
+        <datafield tag="775" ind1="0" ind2="8">
+          <subfield code="6">880-08</subfield>
+          <subfield code="i">Revision of:</subfield>
+          <subfield code="a">Yu, Yingshi.</subfield>
+          <subfield code="s">Works. Selections. 2004.</subfield>
+          <subfield code="t">Yu Yingshi wen ji.</subfield>
+          <subfield code="b">Di 1 ban</subfield>
+          <subfield code="d">Guilin Shi : Guangxi shi fan da xue chu ban she, 2004-</subfield>
+          <subfield code="z">7563345019</subfield>
+          <subfield code="w">(OCoLC)60806809</subfield>
+        </datafield>
+        <datafield tag="880" ind1="1" ind2=" ">
+          <subfield code="6">100-01/$1</subfield>
+          <subfield code="a">余英时,</subfield>
+          <subfield code="e">author.</subfield>
+        </datafield>
+        <datafield tag="880" ind1="1" ind2="0">
+          <subfield code="6">245-02/$1</subfield>
+          <subfield code="a">余英时文集 /</subfield>
+          <subfield code="c">余英时著 ; 沈志佳编.</subfield>
+        </datafield>
+        <datafield tag="880" ind1=" " ind2=" ">
+          <subfield code="6">250-03/$1</subfield>
+          <subfield code="3">Volume 1-10:</subfield>
+          <subfield code="a">第2版.</subfield>
+        </datafield>
+        <datafield tag="880" ind1=" " ind2=" ">
+          <subfield code="6">250-04/$1</subfield>
+          <subfield code="3">Volume 11-12:</subfield>
+          <subfield code="a">第1版.</subfield>
+        </datafield>
+        <datafield tag="880" ind1=" " ind2="1">
+          <subfield code="6">264-05/$1</subfield>
+          <subfield code="a">桂林市 :</subfield>
+          <subfield code="b">广西师范大学出版社,</subfield>
+          <subfield code="c">2014-</subfield>
+        </datafield>
+        <datafield tag="880" ind1="1" ind2=" ">
+          <subfield code="6">505-06/$1</subfield>
+          <subfield code="a">第1卷. 史学, 史家与时代 -- 第2卷. 中国思想传统及其现代变迁 -- 第3卷. 儒家伦理与商人精神 -- 第4卷. 中国知识人之史的考察 -- 第5卷. 现代学人与学术 -- 第6卷. 民主制度与现代文明 -- 第7-8卷. 文化评论与中国情怀(上, 下) -- 第9卷. 历史人物考辨 -- 第10卷. 宋明理学与政治文化 -- 第11卷. 论学会友 -- 第12卷. 国学与中国人文</subfield>
+        </datafield>
+        <datafield tag="880" ind1="1" ind2=" ">
+          <subfield code="6">700-07/$1</subfield>
+          <subfield code="a">沈志佳,</subfield>
+          <subfield code="e">editor.</subfield>
+        </datafield>
+        <datafield tag="880" ind1="0" ind2="8">
+          <subfield code="6">775-08/$1</subfield>
+          <subfield code="i">Revision of:</subfield>
+          <subfield code="a">余英时.</subfield>
+          <subfield code="s">Works. Selections. 2004.</subfield>
+          <subfield code="t">余英时文集.</subfield>
+          <subfield code="b">第1版</subfield>
+          <subfield code="d">桂林市 : 广西师范大学出版社, 2004-</subfield>
+          <subfield code="z">7563345019</subfield>
+          <subfield code="w">(OCoLC)60806809</subfield>
+        </datafield>
+      </record>
