@@ -47,7 +47,7 @@ declare namespace hld              = "http://www.loc.gov/opacxml/holdings/" ;
 
 
 (: VARIABLES :)
-declare variable $mbshared:last-edit :="2015-04-27-T11:00:00";
+declare variable $mbshared:last-edit :="2015-07-23-T17:01:00";
 
 (:rules have a status of "on" or "off":)
 declare variable $mbshared:transform-rules :=(
@@ -76,8 +76,8 @@ declare variable $mbshared:addl-880-nodes:= (
     (:these properties are transformed as either literals or appended to the @uri parameter inside their @domain:)
 declare variable $mbshared:simple-properties:= (
 	<properties>
-       	 <node domain="instance"    property="lccn"	   			  	           tag="010" sfcodes="a"		uri="http://id.loc.gov/authorities/test/identifiers/lccn/"	group="identifiers"			>Library of Congress Control Number</node>
-         <node domain="instance" 	property="nbn" 				    	       tag="015" sfcodes="a"		group="identifiers"          >National Bibliography Number</node>
+       	 <node domain="instance"    property="lccn"	   			  	            tag="010" sfcodes="a"		uri="http://id.loc.gov/authorities/test/identifiers/lccn/"	group="identifiers"			>Library of Congress Control Number</node>
+         <node domain="instance" 	property="nbn" 				    	        tag="015" sfcodes="a"		group="identifiers"          >National Bibliography Number</node>
          <node domain="instance" 	property="nban" 			          	    tag="016" sfcodes="a"	    group="identifiers"       	>National bibliography agency control number</node>
          <node domain="instance" 	property="legalDeposit" 		            tag="017" sfcodes="a"		group="identifiers"          >copyright or legal deposit number</node>
          <node domain="instance" 	property="issn" 			    	        tag="022" sfcodes="a"	group="identifiers"	        >International Standard Serial Number</node>
@@ -474,8 +474,9 @@ declare function mbshared:generate-additional-instance(
 return element bf:Instance {element bf:instanceTitle{
             element bf:Title{ element bf:titleValue{$instance-title}}},
             $freq,
-            $pub,
-            $derivedFrom
+            $pub
+			(:,
+            $derivedFrom:)
     }
 };
 (:~
@@ -511,8 +512,10 @@ declare function mbshared:generate-addl-physical(
         for $i in fn:distinct-values($instance-types1)
                 return    element rdf:type {   attribute rdf:resource { fn:concat("http://bibframe.org/vocab/" ,$i)}}
                 
-return element bf:Instance {element bf:instanceTitle{
-            $instance-types,$instance-types1,
+return element bf:Instance {
+			$instance-types,
+			element bf:instanceTitle{
+            
             element bf:Title{ $instance-title}},
               mbshared:generate-simple-property($d, "instance"),
             $derivedFrom
@@ -539,7 +542,8 @@ declare function mbshared:generate-instance-from260(
         (:    attribute rdf:resource{fn:concat($workID,fn:normalize-space(fn:string($d/../marcxml:controlfield[@tag eq "001"])))}:)
             attribute rdf:resource{fn:concat($workID,".marcxml.xml")}
         }
-	let $control-fields:= marc2bfutils:generate-controlfields($d/ancestor::marcxml:record)
+	(:let $control-fields:= marc2bfutils:generate-controlfields($d/ancestor::marcxml:record):)
+
     let $instance-title := 
         for $titles in $d/../marcxml:datafield[fn:matches(@tag,"(245|246|247|222|242|210)")]
             for $t in $titles
@@ -775,8 +779,8 @@ let $sound:=
             element bf:instanceOf {
                 attribute rdf:resource {$workID}
                 }, 
-			(:$control-fields,:)
-            $derivedFrom,           
+			(:$control-fields,
+            $derivedFrom,     :)      
             $holdings
       }     
 } ;
@@ -879,7 +883,7 @@ declare function mbshared:generate-880-label
             else if ($node-name="subject") then 
                 element bf:authorizedAccessPoint{
 	                   attribute xml:lang {$xmllang},   
-                        marc2bfutils:clean-string(fn:string-join($match/marcxml:subfield[fn:not(@code="6")], " "))
+                        marc2bfutils:clean-string(fn:string-join($match/marcxml:subfield[fn:not(@code="6") and fn:not(@code="2")], " "))
                 }
             else if ($node-name="place") then 
                 for $sf in $match/marcxml:subfield[@code="a"]
@@ -2251,7 +2255,7 @@ declare function mbshared:generate-event
             let $subcode:=if ($s/following-sibling::marcxml:subfield[@code="c"]) then
                             fn:normalize-space(fn:string($s/following-sibling::marcxml:subfield[@code="c"][1]))
                             else ()
-           let $base:=fn:concat("http://id.loc.gov/authorities/classification/G", fn:normalize-space(fn:string($s)))
+           let $base:=fn:concat("http://id.loc.gov/authorities/classification/G",fn:encode-for-uri(fn:normalize-space(fn:string($s))))
            let $uri:= if ($subcode) then
                             fn:concat($base,".", $subcode)
                         else $base
@@ -2603,8 +2607,6 @@ for $marcxml in $collection/marcxml:record[fn:not(@type) or @type="Bibliographic
     let $types := mbshared:get-resourceTypes($marcxml)
         
     let $mainType := "Work"
-	let $expressionType:= if ( $marcxml/marcxml:datafield[@tag="240"]/marcxml:subfield[@code="l"] ) then "Expression" else ""
-    				
     
     let $uniformTitle := (:work title can be from 245 if no 240/130:)           
        for $d in ($marcxml/marcxml:datafield[@tag eq "130"]|$marcxml/marcxml:datafield[@tag eq "240"])[1]
@@ -2612,7 +2614,7 @@ for $marcxml in $collection/marcxml:record[fn:not(@type) or @type="Bibliographic
     let $names := 
         (for $d in $marcxml/marcxml:datafield[fn:matches(@tag,"(100|110|111)")]
                 return mbshared:get-name($d),
-                (:joined addl-names to names so we can get at least the first 700 if htere are no 1xx's into aap:)
+                (:joined addl-names to names so we can get at least the first 700 if there are no 1xx's into aap:)
     (:let $addl-names:= :)
         for $d in $marcxml/marcxml:datafield[fn:matches(@tag,"(700|710|711|720)")][fn:not(marcxml:subfield[@code="t"])]                    
             return mbshared:get-name($d)
@@ -2623,11 +2625,13 @@ for $marcxml in $collection/marcxml:record[fn:not(@type) or @type="Bibliographic
     	       for $t in $marcxml/marcxml:datafield[fn:matches(@tag,"(243|245|247)")]
     	       return mbshared:get-title($t, "work")
             }</titles>
-    let $hashable := mbshared:generate-hashable($marcxml, $mainType,$expressionType, $types)     
+    let $hashable := mbshared:generate-hashable($marcxml, $mainType, $types)     
     
     (: Let's create an authoritativeLabel for this :)
     let $aLabel := 
-        if ($uniformTitle[bf:workTitle]) then 
+		if ($uniformTitle[madsrdf:authoritativeLabel]) then 
+			fn:concat( fn:string($names[1]/bf:*[1]/bf:label), " ", fn:string($uniformTitle/madsrdf:authoritativeLabel) )
+        else if ($uniformTitle[bf:workTitle]) then 
             fn:concat( fn:string($names[1]/bf:*[1]/bf:label), " ", fn:string($uniformTitle/bf:workTitle) )
         else if ($titles) then
             fn:concat( fn:string($names[1]/bf:*[1]/bf:label), " ", fn:string($titles/bf:workTitle[1]) )
@@ -2777,11 +2781,7 @@ for $marcxml in $collection/marcxml:record[fn:not(@type) or @type="Bibliographic
     return 
         element {fn:concat("bf:" , $mainType)} {
             attribute rdf:about {$workID},            
-         	if ( $expressionType!="") then                  
-                  element rdf:type {
-                    attribute rdf:resource {fn:concat("http://bibframe.org/vocab/", $expressionType)}
-                }
-				else (),
+         
             for $t in fn:distinct-values($types)
             return             
                   element rdf:type {
@@ -2797,6 +2797,7 @@ for $marcxml in $collection/marcxml:record[fn:not(@type) or @type="Bibliographic
                 $titles/*                ,
        
             $names,            
+			
             (:$addl-names,:)
             $events,            
             $work-simples,
@@ -2817,7 +2818,7 @@ for $marcxml in $collection/marcxml:record[fn:not(@type) or @type="Bibliographic
             $complex-notes,
             $standalone-880s,
             $work-relateds,      
-            $derivedFrom,
+           (: $derivedFrom,:)
             $hashable,
             $admin,
           
@@ -2923,9 +2924,8 @@ declare function mbshared:generate-complex-notes(
 :           it represents a name (name/title 7XX fields, therefore, are not included)
 :       4) Sort all the names alphabetically to help control for variation in how the data were 
 :           originally entered.
-:       5) Include the language from the 008.
-:	  5.5) if the Work is an expression, include that
-:       6) Include the 1st type of MARC resource (Text, Audio, etc)
+:       5) Include the langauge from the 008.
+:       6) Include the type of MARC resource (Text, Audio, etc)
 :       7) Concatenate and normalize.  Normalization includes forcing the string to be all lower 
 :           case, removing spaces, and removing all special characters.
 : 
@@ -2936,7 +2936,6 @@ declare function mbshared:generate-complex-notes(
 declare function mbshared:generate-hashable(
     $marcxml as element(marcxml:record),
     $mainType as xs:string,
-	$expressionType as xs:string,
     $types as item()*
     ) as element( bf:authorizedAccessPoint)
 {
@@ -2945,11 +2944,8 @@ let $hashableTitle :=
         let $primary := $marcxml/marcxml:datafield[@tag eq "245"]
         let $t := 
             if ($uniform/marcxml:subfield[fn:not(fn:matches(@code,"(g|h|k|l|m|n|o|p|r|s|0|6|8)"))]) then
-                (: We have a uniform title that contains /only/ a title and a date of work. 
-				Suppress the language; it gets added back as code
-				:)
-                
-				fn:string-join($uniform/marcxml:subfield[fn:not(fn:matches(@code,"(0|4|6|8|l)" ))], " ")
+                (: We have a uniform title that contains /only/ a title and a date of work. :)
+                fn:string-join($uniform/marcxml:subfield, " ")
             else
                 (:  Otherwise, let's just use the 245 for now.  For example, 
                     we cannot create an uber work for Leaves of Grass. Selections.
@@ -2981,7 +2977,7 @@ let $hashableTitle :=
     let $hashableNames := fn:string-join($hashableNames, " ")
     let $hashableLang := fn:normalize-space(fn:substring(fn:string($marcxml/marcxml:controlfield[@tag='008']), 36, 3))
     (:let $hashableTypes := fn:concat($mainType, fn:string-join($types, "")):)
-    let $hashableTypes := fn:concat($mainType, $expressionType, $types[1])
+    let $hashableTypes := fn:concat($mainType, $types[1])
     
     let $hashableStr := fn:concat($hashableNames, " / ", $hashableTitle, " / ", $hashableLang, " / ", $hashableTypes)
     let $hashableStr := fn:replace($hashableStr, "!|\||@|#|\$|%|\^|\*|\(|\)|\{|\}|\[|\]|:|;|'|&amp;quot;|&amp;|<|>|,|\.|\?|~|`|\+|=|_|\-|/|\\| ", "")
@@ -3070,7 +3066,8 @@ declare function mbshared:get-subject(
                                     }
                                 },                                
                                 $madsrdf/madsrdf:authoritativeLabel,
-                                element  madsrdf:isMemberOfMADSScheme {attribute rdf:resource {$subjectScheme}}
+                                element  madsrdf:isMemberOfMADSScheme {attribute rdf:resource {$subjectScheme}},
+								$madsrdf/madsrdf:componentList 
                             }
                         },
                          if ($d/marcxml:subfield[@code="2"]) then  element bf:authoritySource {$subjectScheme} else ()
@@ -3079,6 +3076,7 @@ declare function mbshared:get-subject(
                                     
                 )
             return $details
+			
             
 	   
        else if ($d/@tag="752")  then
@@ -3246,7 +3244,7 @@ return
 :   @return bf:creator element OR a more specific relators:* one. 
 :)
 declare function mbshared:get-name(
-    $d as element(marcxml:datafield)     
+    $d as element(marcxml:datafield)*     
     ) as element()*
 {
     (:let $relatorCode := 
@@ -3286,6 +3284,8 @@ declare function mbshared:get-name(
             "bf:Family"
         else if ( fn:ends-with(fn:string($d/@tag), "00") ) then    
             "bf:Person"
+		else if ( fn:ends-with(fn:string($d/@tag), "10") and fn:string($d/@ind1)="1" ) then
+            "bf:Jurisdiction"
         else if ( fn:ends-with(fn:string($d/@tag), "10") ) then
             "bf:Organization"
         else if ( fn:ends-with(fn:string($d/@tag), "11") ) then
@@ -3505,7 +3505,6 @@ declare function mbshared:get-resourceTypes(
 
     let $leader06 := fn:substring(fn:string($record/marcxml:leader), 7, 1)   
     let $types:=
-
     (	for $cf in $record/marcxml:controlfield[@tag="007"]/fn:substring(text(),1,1)
     (:00 - Category of material :)
     		for $t in $marc2bfutils:resourceTypes/type[@cf007]
@@ -3534,7 +3533,7 @@ declare function mbshared:get-resourceTypes(
     				return fn:string($t)  ,  	    
     	for $t in $marc2bfutils:resourceTypes/type
         		where $t/@leader6 eq $leader06
-        		return fn:string($t)    
+        		return fn:string($t)
         		)
     return $types
     
@@ -3677,21 +3676,23 @@ declare function mbshared:generate-translationOf (    $d as element(marcxml:data
 {
       
   let $aLabel :=  marc2bfutils:clean-title-string(fn:string-join($d/marcxml:subfield[fn:matches(@code,"(a|d|f|g|h|k)")  ]," "))
+  let $namenode:=  mbshared:get-name($d/ancestor::marcxml:record/marcxml:datafield[fn:matches(@tag, "(100|110|111)")][1])
+  let $name:= fn:string($namenode[1]/bf:*[1]/bf:label)
   return    element bf:translationOf {     
             element bf:Work {
                               
                 element bf:title {$aLabel},
                 mbshared:generate-titleNonsort($d,$aLabel,"bf:title") ,                                    
                 element madsrdf:authoritativeLabel{$aLabel},                               
-                element bf:authorizedAccessPoint {$aLabel},
-                
-                if ($d/../marcxml:datafield[@tag="100"]) then
+                element bf:authorizedAccessPoint {fn:concat($name,$aLabel)},
+                $namenode
+                (:if ($d/../marcxml:datafield[@tag="100"]) then
                     element bf:creator{ 
                             element bf:Agent {
-                                element bf:label {fn:string-join($d/../marcxml:datafield[@tag="100"]/marcxml:subfield[fn:not(fn:matches(@code,"(0|4|3|6|8)") ) ]," ")}
+                                element bf:label {fn:string-join($d/../marcxml:datafield[@tag="100"]/marcxml:subfield[fn:not(fn:matches(@code,"(0|6|8|e|4)"))  ]," ")}
                             }
                     }                    
-                else ()
+                else ():)
              }
        }
        
@@ -4022,7 +4023,7 @@ expression: "^[a-zA-Z]{1,3}[1-9].*$". For DDC we filter out the truncation symbo
                         attribute rdf:resource {fn:concat( "http://nlm.example.org/classification/",fn:normalize-space($class))
                         }
                     },
-            for $this-tag in $marcxml/marcxml:datafield[@tag="052"] return mbshared:generate-simple-property($this-tag ,"classification")     ,
+            for $this-tag in $marcxml/marcxml:datafield[@tag="052"] return mbshared:generate-simple-property($this-tag ,"classification")     ,			
             for $this-tag in $marcxml/marcxml:datafield[fn:matches(@tag,"086")][marcxml:subfield[@code="z"]]
              let $scheme:=
                     if ($this-tag[@ind1=" "] and $this-tag/marcxml:subfield[@code="2"] ) then
@@ -4074,7 +4075,7 @@ expression: "^[a-zA-Z]{1,3}[1-9].*$". For DDC we filter out the truncation symbo
                     return	 
                         element  {fn:concat("bf:",$property)} {          
                      			if ($property="classificationLcc" ) then 
-                     				attribute rdf:resource {fn:concat( "http://id.loc.gov/authorities/classification/",fn:string($cl ))}                    				                     		
+                     				attribute rdf:resource {fn:concat( "http://id.loc.gov/authorities/classification/",fn:encode-for-uri(fn:string($cl )))}                    				                     		
                      		    else	if ($property="classificationDdc" ) then 
                      		             let $ddc:=fn:normalize-space($this-tag/marcxml:subfield[@code="a"])
                      		             let $ddc:=fn:replace($ddc,"^(.+) (.+)$", "$1") 
